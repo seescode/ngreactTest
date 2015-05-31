@@ -19,12 +19,10 @@
         <![endif]-->
 
         
-        <div class="container">
+        <div class="container" ng-app="app" ng-controller="ctl as vm">
 
             <div class="jumbotron" id="app">
-                <h1>'Allo, 'Allo!</h1>
-                <p class="lead">Always a pleasure scaffolding your apps.</p>
-                <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
+                <hello fname="'yong'" lname="'person'" click="vm.click" watch-depth="reference"/>
             </div>
         </div>
         
@@ -37,7 +35,9 @@
         <script src="bower_components/ngReact/ngReact.min.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
-        <script src="scripts/app.js"></script>
+        <script src="scripts/build/app.js"></script>
+        <script src="scripts/build/hello.js"></script>            
+        <script src="scripts/build/todo.js"></script>            
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
