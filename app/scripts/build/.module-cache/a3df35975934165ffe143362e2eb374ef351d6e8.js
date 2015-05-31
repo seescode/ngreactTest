@@ -26,8 +26,6 @@ var TodoList = React.createClass({displayName: "TodoList",
     return React.createElement("ul", null, this.props.items.map(createItem));
   }
 });
-
-
 var TodoApp = React.createClass({displayName: "TodoApp",
   getInitialState: function() {
     return {items: [], text: ''};
@@ -57,8 +55,8 @@ var TodoApp = React.createClass({displayName: "TodoApp",
 });
 
 
-angular.module('app').value('todo', TodoApp);
+angular.module('app').value('TodoApp', TodoApp);
 
 angular.module('app').directive('todo', function(reactDirective) {
-  return reactDirective('todo');
+  return reactDirective('TodoApp');
 });

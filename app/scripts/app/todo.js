@@ -1,4 +1,4 @@
-var Timer = React.createClass({displayName: "Timer",
+var Timer = React.createClass({
   getInitialState: function() {
     return {secondsElapsed: 0};
   },
@@ -13,22 +13,22 @@ var Timer = React.createClass({displayName: "Timer",
   },
   render: function() {
     return (
-      React.createElement("div", null, "Seconds Elapsed: ", this.state.secondsElapsed)
+      <div>Seconds Elapsed: {this.state.secondsElapsed}</div>
     );
   }
 });
 
-var TodoList = React.createClass({displayName: "TodoList",
+var TodoList = React.createClass({
   render: function() {
     var createItem = function(itemText) {
-      return React.createElement("li", null, itemText);
+      return <li>{itemText}</li>;
     };
-    return React.createElement("ul", null, this.props.items.map(createItem));
+    return <ul>{this.props.items.map(createItem)}</ul>;
   }
 });
 
 
-var TodoApp = React.createClass({displayName: "TodoApp",
+var TodoApp = React.createClass({
   getInitialState: function() {
     return {items: [], text: ''};
   },
@@ -43,15 +43,15 @@ var TodoApp = React.createClass({displayName: "TodoApp",
   },
   render: function() {
     return (
-      React.createElement("div", null, 
-        React.createElement("h3", null, "TODO"), 
-        React.createElement(TodoList, {items: this.state.items}), 
-        React.createElement("form", {onSubmit: this.handleSubmit}, 
-          React.createElement("input", {onChange: this.onChange, value: this.state.text}), 
-          React.createElement("button", null, 'Add #' + (this.state.items.length + 1))
-        ), 
-        React.createElement(Timer, null)
-      )
+      <div>
+        <h3>TODO</h3>
+        <TodoList items={this.state.items} />
+        <form onSubmit={this.handleSubmit}>
+          <input onChange={this.onChange} value={this.state.text} />
+          <button>{'Add #' + (this.state.items.length + 1)}</button>
+        </form>
+        <Timer />
+      </div>
     );
   }
 });
