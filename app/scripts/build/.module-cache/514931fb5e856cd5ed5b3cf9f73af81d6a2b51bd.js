@@ -29,6 +29,9 @@ var TodoList = React.createClass({displayName: "TodoList",
 
 
 var TodoApp = React.createClass({displayName: "TodoApp",
+  propTypes: {
+    click : React.PropTypes.func.isRequired
+  },
   getInitialState: function() {
     return {items: [], text: ''};
   },
@@ -37,6 +40,8 @@ var TodoApp = React.createClass({displayName: "TodoApp",
   },
   handleSubmit: function(e) {
     e.preventDefault();
+        this.props.click('yo');
+
     var nextItems = this.state.items.concat([this.state.text]);
     var nextText = '';
     this.setState({items: nextItems, text: nextText});

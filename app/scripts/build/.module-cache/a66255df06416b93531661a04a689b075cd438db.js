@@ -1,18 +1,16 @@
 angular.module('app', ['react']).
 controller('ctl', function ($scope) {   
+    var vm = this;
+	
     
-	$scope.toOutput = 'onload';
-	var click = function(name) {
+	vm.click = function(name) {
 		alert('hi ' + name);	
-		$scope.toOutput = name;
 	};
 	
-	$scope.click = click;
-	
-	$scope.person = {
+	vm.person = {
 		fname: 'y',
 		lname: 'b',
-		click: click
+		click: vm.click
 	};
 
 });

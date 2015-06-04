@@ -19,12 +19,18 @@
         <![endif]-->
 
         
-        <div class="container" ng-app="app" ng-controller="ctl as vm">
-
+        <div class="container" ng-app="app" ng-controller="ctl">
+            <div>
+                <hello fname="'yong'" lname="'person'" click="click" watch-depth="reference"/>
+            </div>                
+            <div>
+                Output Directive: <output stuff="toOutput"></output>
+            </div>
             <div class="jumbotron" id="app">
-                <hello fname="'yong'" lname="'person'" click="vm.click" watch-depth="reference"/>
-                <todo watch-depth="reference"/>
-                
+
+                 
+                <todo click="click" watch-depth="reference"/>
+
             </div>
         </div>
         
@@ -40,6 +46,8 @@
         <script src="scripts/build/app.js"></script>
         <script src="scripts/build/hello.js"></script>            
         <script src="scripts/build/todo.js"></script>            
+        <script src="scripts/build/output.js"></script>            
+            
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
